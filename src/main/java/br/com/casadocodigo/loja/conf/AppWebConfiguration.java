@@ -10,16 +10,25 @@ import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import br.com.casadocodigo.loja.controllers.HomeController;
 import br.com.casadocodigo.loja.daos.ProdutoDAO;
 import br.com.casadocodigo.loja.infra.FileSaver;
 
+//Por padrão, o Spring MVC nega o acesso à pasta resources. 
+//Consequentemente, o Tomcat não pode carregar os arquivos CSS (e a página fica sem design). 
+//Para liberar o acesso, é preciso fazer duas alterações na classe AppWebConfiguration:
+//
+// * A classe deve estender a classe WebMvcConfigurerAdapter
+// * A classe deve implementar o método configureDefaultServletHandling para liberar o acesso:
+
 @EnableWebMvc
 @ComponentScan(basePackageClasses= {HomeController.class, ProdutoDAO.class, FileSaver.class})
-public class AppWebConfiguration {
+public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 
 	@Bean
 	public InternalResourceViewResolver internalResourceViewResolver() {
@@ -58,5 +67,10 @@ public class AppWebConfiguration {
 	@Bean
 	public MultipartResolver multipartResolver() {
 		return new StandardServletMultipartResolver();
+	}
+	
+	@Override
+	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+	    configurer.enable();
 	}
 }
