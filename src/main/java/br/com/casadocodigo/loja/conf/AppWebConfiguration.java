@@ -18,6 +18,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import br.com.casadocodigo.loja.controllers.HomeController;
 import br.com.casadocodigo.loja.daos.ProdutoDAO;
 import br.com.casadocodigo.loja.infra.FileSaver;
+import br.com.casadocodigo.loja.models.CarrinhoCompras;
 
 //Por padrão, o Spring MVC nega o acesso à pasta resources. 
 //Consequentemente, o Tomcat não pode carregar os arquivos CSS (e a página fica sem design). 
@@ -27,7 +28,10 @@ import br.com.casadocodigo.loja.infra.FileSaver;
 // * A classe deve implementar o método configureDefaultServletHandling para liberar o acesso:
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses= {HomeController.class, ProdutoDAO.class, FileSaver.class})
+@ComponentScan(basePackageClasses= {HomeController.class, 
+									ProdutoDAO.class, 
+									FileSaver.class, 
+									CarrinhoCompras.class})
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 
 	@Bean
@@ -35,6 +39,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		resolver.setPrefix("/WEB-INF/views/");
 		resolver.setSuffix(".jsp");
+		resolver.setExposedContextBeanNames("carrinhoCompras");
 		
 		return resolver;
 	}
