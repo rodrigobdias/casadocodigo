@@ -8,6 +8,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Lovro de Java, Android, iPhone, Ruby, PHP e muito mais - Casa do Código</title>
+
+<c:url value="/resources/css" var="cssPath"/>
+<link rel="stylesheet" href="${cssPath }/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="${cssPath }/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
 </head>
 <body>
 	<form:form action="${s:mvcUrl('PC#gravar').build() }" method="POST"
