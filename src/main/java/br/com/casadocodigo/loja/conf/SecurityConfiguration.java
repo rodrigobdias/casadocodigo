@@ -28,8 +28,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //	    .antMatchers("/resources/**").permitAll()
 //	    .antMatchers("/").permitAll()
 //	    .anyRequest().authenticated()
-//	    .and().formLogin().loginPage("/login").permitAll()
-//	    .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
+//	    .and().formLogin().loginPage("/login").defaultSuccessUrl("/produtos").permitAll()
+//	    .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+//	    .permitAll().logoutSuccessUrl("/login");
 	    .antMatchers("/resources/**").permitAll()
 	    .antMatchers("/carrinho/**").permitAll()
 	    .antMatchers("/pagamento/**").permitAll()
@@ -39,8 +40,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	    .antMatchers("/produtos/**").permitAll()
 	    .antMatchers("/").permitAll()
 	    .anyRequest().authenticated()
-	    .and().formLogin().loginPage("/login").permitAll()
-	    .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
+	    .and().formLogin().loginPage("/login").defaultSuccessUrl("/produtos").permitAll()
+	    .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+	    .permitAll().logoutSuccessUrl("/login");
 	}
 	
     @Override
@@ -49,3 +51,25 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         .passwordEncoder(new BCryptPasswordEncoder());
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
