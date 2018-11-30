@@ -26,6 +26,7 @@ public class HomeController {
         modelAndView.addObject("produtos", produtos);
 		System.out.println("Entrando no Home da CasaDoCodigo (CDC)");
         return modelAndView;
+        
     }
     
 }
