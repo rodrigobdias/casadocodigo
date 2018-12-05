@@ -93,7 +93,7 @@ public class Produto {
 	public String toString() {
 		return "Produto [titulo=" + titulo + ", descricao=" + descricao + ", paginas=" + paginas + "]";
 	}
-	
+		
 	public String getSumarioPath() {
 		return sumarioPath;
 	}
@@ -110,5 +110,4 @@ public class Produto {
 				.getValor();		
 	}
 	
-
 }
