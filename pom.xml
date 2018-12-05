@@ -187,6 +187,12 @@
 		    <artifactId>spring-security-test</artifactId>
 		    <version>4.0.0.RELEASE</version>
 		    <scope>test</scope>
-		</dependency>		
+		</dependency>	
+		<!-- Gmail -->
+		<dependency>
+		    <groupId>javax.mail</groupId>
+		    <artifactId>mail</artifactId>
+		    <version>1.4.7</version>
+		</dependency>			
 	</dependencies>
 </project>
