@@ -102,6 +102,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	
 	@Bean
 	public RestTemplate restTemplate() {
+		
 		return new RestTemplate(); 
 	}
 		
@@ -121,6 +122,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	
 	@Bean
 	public ViewResolver contentNegotiationViewResolver(ContentNegotiationManager manager){
+		
 	    List<ViewResolver> viewResolvers = new ArrayList<>();
 	    viewResolvers.add(internalResourceViewResolver());
 	    viewResolvers.add(new JsonViewResolver());
@@ -135,6 +137,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
+		
 	    registry.addInterceptor(new LocaleChangeInterceptor());
 	}
 	
