@@ -21,10 +21,13 @@ public class HomeController {
     @RequestMapping("/")
     @Cacheable(value="produtosHome")
     public ModelAndView index(){
+	    
         List<Produto> produtos = produtoDao.listar();
+
         ModelAndView modelAndView = new ModelAndView("home");
         modelAndView.addObject("produtos", produtos);
-		System.out.println("Entrando no Home da CasaDoCodigo (CDC)");
+	System.out.println("Entrando no Home da CasaDoCodigo (CDC)");
+	    
         return modelAndView;
         
     }
