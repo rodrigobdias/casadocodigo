@@ -40,6 +40,7 @@ public class PagamentoController {
 			try {
 				String response = restTemplate.postForObject(uri, new DadosPagamento(carrinho.getTotal()),
 						String.class);
+				
 				System.out.println(response);
 
 				// envia email para o usuário
