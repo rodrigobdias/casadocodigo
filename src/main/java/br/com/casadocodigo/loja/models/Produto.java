@@ -35,21 +35,27 @@ public class Produto {
 	public Calendar getDataLancamento() {
 		return dataLancamento;
 	}
+	
 	public void setDataLancamento(Calendar dataLancamento) {
 		this.dataLancamento = dataLancamento;
 	}
+	
 	public int getId() {
 		return id;
 	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 	public List<Preco> getPrecos() {
 		return precos;
 	}
+	
 	public void setPrecos(List<Preco> precos) {
 		this.precos = precos;
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -70,21 +76,27 @@ public class Produto {
 			return false;
 		return true;
 	}
+	
 	public String getTitulo() {
 		return titulo;
 	}
+	
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
+	
 	public String getDescricao() {
 		return descricao;
 	}
+	
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+	
 	public int getPaginas() {
 		return paginas;
 	}
+	
 	public void setPaginas(int paginas) {
 		this.paginas = paginas;
 	}
