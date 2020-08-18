@@ -1,2 +1,20 @@
 server:
   port: 8180
+  
+# data source
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/casadocodigo?createDatabaseIfNotExist=true&useSSL=false
+    username: root
+    password: 123
+    
+# jpa properties
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL55Dialect
+        show_sql: true
+        format_sql: true  
